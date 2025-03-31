@@ -728,6 +728,7 @@ class BrowserContext:
 				pixels_above=pixels_above,
 				pixels_below=pixels_below,
 			)
+			time.sleep(2)
 
 			return self.current_state
 		except Exception as e:
