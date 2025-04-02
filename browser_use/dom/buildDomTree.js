@@ -264,29 +264,29 @@
       overlay.style.height = `${rect.height}px`;
 
       // Create and position label
-      const label = document.createElement("div");
-      label.className = "playwright-highlight-label";
-      label.style.position = "fixed";
-      label.style.background = baseColor;
-      label.style.color = "white";
-      label.style.padding = "1px 4px";
-      label.style.borderRadius = "4px";
-      label.style.fontSize = `${Math.min(12, Math.max(8, rect.height / 2))}px`;
-      label.textContent = index;
+      // const label = document.createElement("div");
+      // label.className = "playwright-highlight-label";
+      // label.style.position = "fixed";
+      // label.style.background = baseColor;
+      // label.style.color = "white";
+      // label.style.padding = "1px 4px";
+      // label.style.borderRadius = "4px";
+      // label.style.fontSize = `${Math.min(12, Math.max(8, rect.height / 2))}px`;
+      // label.textContent = index;
 
-      const labelWidth = 20;
-      const labelHeight = 16;
+      // const labelWidth = 20;
+      // const labelHeight = 16;
 
-      let labelTop = top + 2;
-      let labelLeft = left + rect.width - labelWidth - 2;
+      // let labelTop = top + 2;
+      // let labelLeft = left + rect.width - labelWidth - 2;
 
-      if (rect.width < labelWidth + 4 || rect.height < labelHeight + 4) {
-          labelTop = top - labelHeight - 2;
-          labelLeft = left + rect.width - labelWidth;
-      }
+      // if (rect.width < labelWidth + 4 || rect.height < labelHeight + 4) {
+      //     labelTop = top - labelHeight - 2;
+      //     labelLeft = left + rect.width - labelWidth;
+      // }
 
-      label.style.top = `${labelTop}px`;
-      label.style.left = `${labelLeft}px`;
+      // label.style.top = `${labelTop}px`;
+      // label.style.left = `${labelLeft}px`;
 
       // Add to container
       container.appendChild(overlay);
@@ -319,8 +319,8 @@
               newLabelLeft = newLeft + newRect.width - labelWidth;
           }
 
-          label.style.top = `${newLabelTop}px`;
-          label.style.left = `${newLabelLeft}px`;
+          // label.style.top = `${newLabelTop}px`;
+          // label.style.left = `${newLabelLeft}px`;
       };
 
       window.addEventListener('scroll', updatePositions);

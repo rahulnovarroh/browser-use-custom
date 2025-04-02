@@ -705,10 +705,11 @@ class BrowserContext:
 		try:
 			await self.remove_highlights()
 			dom_service = DomService(page)
+			print(f"FOCUS ELEMENT: {focus_element}")
 			highlight_elements = self.config.highlight_elements
 			if focus_element is not None and focus_element > -1:
 				highlight_elements = True
-
+			
 			content = await dom_service.get_clickable_elements(
 				focus_element=focus_element,
 				viewport_expansion=self.config.viewport_expansion,
@@ -728,7 +729,7 @@ class BrowserContext:
 				pixels_above=pixels_above,
 				pixels_below=pixels_below,
 			)
-			time.sleep(2)
+			time.sleep(1)
 
 			return self.current_state
 		except Exception as e:
@@ -1002,6 +1003,8 @@ class BrowserContext:
 		"""
 		try:
 			# Highlight before typing
+			print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+			print(element_node.highlight_index)
 			if element_node.highlight_index is not None:
 				await self._update_state(focus_element=element_node.highlight_index)
 
@@ -1039,6 +1042,9 @@ class BrowserContext:
 		page = await self.get_current_page()
 
 		try:
+			print("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+			print(element_node.highlight_index)
+
 			# Highlight before clicking
 			if element_node.highlight_index is not None:
 				await self._update_state(focus_element=element_node.highlight_index)
